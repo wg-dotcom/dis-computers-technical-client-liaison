@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guillermo - Technical Client Liaison | DIS Computers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f5f7;
+            color: #2d3748;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+        }
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; margin: 0; max-width: 100%; }
+        }
+
+        /* Header */
+        .header {
+            background: #1a1f2e;
+            padding: 40px 48px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-left { flex: 1; }
+        .logo {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #2ea3f2;
+            margin-bottom: 20px;
+        }
+        .candidate-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .candidate-headline {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2ea3f2;
+            margin-bottom: 16px;
+        }
+        .contact-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+        .contact-item a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        /* Accent bar */
+        .accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #2ea3f2, #1b8dd6);
+        }
+
+        /* Body */
+        .body-content {
+            padding: 36px 48px 32px;
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2ea3f2;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .summary-text {
+            font-size: 14.5px;
+            color: #4a5568;
+            line-height: 1.75;
+        }
+
+        /* Experience */
+        .exp-entry { margin-bottom: 22px; }
+        .exp-entry:last-child { margin-bottom: 0; }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        .exp-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        .exp-company {
+            font-size: 14px;
+            color: #2ea3f2;
+            font-weight: 500;
+        }
+        .exp-date {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 400;
+        }
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+        .exp-bullets li {
+            font-size: 13.5px;
+            color: #4a5568;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        .exp-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            background: #2ea3f2;
+            border-radius: 50%;
+        }
+
+        /* Education */
+        .edu-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .edu-degree {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        .edu-school {
+            font-size: 13.5px;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #2ea3f2;
+            background: rgba(46, 163, 242, 0.08);
+            border: 1px solid rgba(46, 163, 242, 0.2);
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        /* Languages */
+        .lang-row {
+            display: flex;
+            gap: 32px;
+            margin-top: 4px;
+        }
+        .lang-item {
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .lang-level {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-left: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1f2e;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #2ea3f2;
+        }
+        .footer-note {
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">DIS COMPUTERS</div>
+                <div class="candidate-name">Guillermo</div>
+                <div class="candidate-headline">Technical Client Liaison</div>
+                <div class="contact-row">
+                    <span class="contact-item">Nicaragua</span>
+                    <span class="contact-item"><a href="mailto:gsoto03@hotmail.com">gsoto03@hotmail.com</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="accent-bar"></div>
+
+        <div class="body-content">
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p class="summary-text">Experienced IT professional with a strong background in Network Operations, Cloud Support, and Helpdesk Services. Over 10 years of experience providing IT support, implementing cybersecurity measures, managing Microsoft 365 tenants, and supporting enterprise-level clients. Bachelor's in Computer Science. Bilingual English/Spanish.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Support Analyst</span>
+                            <span class="exp-company"> &middot; NGN Engineering</span>
+                        </div>
+                        <span class="exp-date">Sep 2022 &ndash; Present</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Provide Helpdesk support via chat, email, and phone</li>
+                        <li>Manage RMM tools (Kaseya VSA, TeamViewer, Anydesk, Quick Assist, Splashtop)</li>
+                        <li>Act as Backup Administrator, managing backup processes and data security</li>
+                        <li>Administer Windows Server Farms (2016-2022) and third-party tools (Sage, QuickBooks)</li>
+                        <li>Manage network infrastructure (Meraki, Ubiquiti AP), VoIP (call queues, routing)</li>
+                        <li>Microsoft 365 Administrator for client tenants</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">NOC Engineer</span>
+                            <span class="exp-company"> &middot; Prodigy Technology Solutions</span>
+                        </div>
+                        <span class="exp-date">Jul 2021 &ndash; Sep 2022</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>IT support for Windows 10, Windows Servers, M365, third-party software</li>
+                        <li>Managed cybersecurity applications, M365 tenants, Windows patching/backups</li>
+                        <li>Implemented IT projects including firewall and firmware updates</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Subject Matter Expert</span>
+                            <span class="exp-company"> &middot; Concentrix</span>
+                        </div>
+                        <span class="exp-date">Dec 2020 &ndash; Jul 2021</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>L1 escalation engineer for Office 365 support (Exchange Online, Azure AD Connect)</li>
+                        <li>Resolved over 5,000 support cases</li>
+                        <li>PowerShell automation and troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Cloud Support Engineer</span>
+                            <span class="exp-company"> &middot; Concentrix</span>
+                        </div>
+                        <span class="exp-date">Feb 2019 &ndash; Dec 2020</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Supported LATAM IT customers with O365 and Azure</li>
+                        <li>3,500+ support cases (SharePoint, Teams, Exchange, Azure AD)</li>
+                        <li>Automated workflows using PowerShell</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Deskside Support Engineer III</span>
+                            <span class="exp-company"> &middot; Concentrix</span>
+                        </div>
+                        <span class="exp-date">Aug 2017 &ndash; Feb 2019</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>IT support for 150+ users in mixed Mac/Windows environment</li>
+                        <li>Network monitoring (PRTG), telephony (Avaya, Grandstream)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="edu-entry">
+                    <div>
+                        <div class="edu-degree">Bachelor's Degree in Computer Science</div>
+                        <div class="edu-school">Universidad Centroamericana</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Microsoft 365 Administration</span>
+                    <span class="skill-tag">Windows Servers (2012-2022)</span>
+                    <span class="skill-tag">PowerShell Scripting</span>
+                    <span class="skill-tag">Network Monitoring</span>
+                    <span class="skill-tag">PRTG</span>
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">SolarWinds</span>
+                    <span class="skill-tag">Nagios</span>
+                    <span class="skill-tag">Firewall Management</span>
+                    <span class="skill-tag">Entra ID</span>
+                    <span class="skill-tag">Cloud Services</span>
+                    <span class="skill-tag">VoIP</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div class="lang-row">
+                    <span class="lang-item">English <span class="lang-level">(Advanced)</span></span>
+                    <span class="lang-item">Spanish <span class="lang-level">(Native)</span></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">DIS COMPUTERS</div>
+            <div class="footer-note">Confidential &mdash; Prepared for DIS Computers</div>
+        </div>
+    </div>
+</body>
+</html>

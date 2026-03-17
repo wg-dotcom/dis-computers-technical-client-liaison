@@ -532,6 +532,170 @@
             color: var(--gray);
         }
 
+        /* --- Comparison Table --- */
+        .comparison-section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .comparison-section h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .comparison-section > p {
+            font-size: 15px;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .comparison-table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            font-size: 13px;
+        }
+
+        .comparison-table thead th {
+            background: var(--black);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .comparison-table thead th:first-child {
+            border-radius: 11px 0 0 0;
+        }
+
+        .comparison-table thead th:last-child {
+            border-radius: 0 11px 0 0;
+        }
+
+        .comparison-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-light);
+            color: var(--gray-dark);
+            vertical-align: top;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--off-white);
+        }
+
+        .comparison-table tbody tr.premium-row {
+            background: rgba(245, 166, 35, 0.04);
+        }
+
+        .comparison-table tbody tr.premium-row:hover {
+            background: rgba(245, 166, 35, 0.08);
+        }
+
+        .table-name {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .table-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 6px;
+        }
+
+        .table-badge.premium {
+            background: rgba(245, 166, 35, 0.12);
+            color: #b07800;
+        }
+
+        .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .partial {
+            color: var(--amber);
+        }
+
+        .miss {
+            color: var(--gray-light);
+        }
+
+        /* --- Video Modal --- */
+        .video-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal-overlay.active {
+            display: flex;
+        }
+
+        .video-modal {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-modal video,
+        .video-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 4px 12px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .video-modal-close:hover {
+            opacity: 1;
+        }
+
         /* --- Responsive --- */
         @media (max-width: 768px) {
             header {
@@ -589,6 +753,15 @@
 
             .hero-meta {
                 gap: 16px;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table thead th,
+            .comparison-table tbody td {
+                padding: 10px 12px;
             }
         }
     </style>
@@ -706,11 +879,11 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://profiles.candidate-profiles.com/menard-m-technical-support-specialist-2026-01-30/#resume" target="_blank" class="resource-btn primary">
+                    <a href="resume-menard.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
-                    <a href="https://profiles.candidate-profiles.com/menard-m-technical-support-specialist-2026-01-30/#video" target="_blank" class="resource-btn accent">
+                    <a href="#" onclick="openVideoModal('https://profiles.candidate-profiles.com/menard-m-technical-support-specialist-2026-01-30/#video'); return false;" class="resource-btn accent">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         Watch Intro Video
                     </a>
@@ -768,11 +941,11 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-pB6bARZvNnus/5d608613-9fd5-4612-b439-340f7b17f1ef-ZYFB2mmnnyNsKi2qcySz2rrhPGl6ZudKB0RmkxWLoHpEp8gnKWAKdQPaFT4cMUhPevPTu12nbc5bVzlCRFBN4EpKG4ZwR5d1I42/Resume--Guillermo-Soto-(1).pdf" target="_blank" class="resource-btn primary">
+                    <a href="resume-guillermo.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
-                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/49ea0b38-2e81-48c1-ad57-a27b8cade45f" target="_blank" class="resource-btn accent">
+                    <a href="#" onclick="openVideoModal('https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/49ea0b38-2e81-48c1-ad57-a27b8cade45f'); return false;" class="resource-btn accent">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         Watch Intro Video
                     </a>
@@ -830,7 +1003,7 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-pB6bARZvNnus/bca9f3e5-c813-408b-b671-563deac16264-fUQyQZB1D9PckqhnBJS7TtYACoXZGvnu4K0pI5qo8lk7hRQUXrT4kuDKZ3JTki2AI2WOdKBQYPWflqYd2PHKUkhQnyWl4sO9Oev/WARREN-ENGELBRECHT-cv-(1).pdf" target="_blank" class="resource-btn primary">
+                    <a href="resume-warren.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
@@ -886,11 +1059,11 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://profiles.candidate-profiles.com/arshad-g-tier-ii-it-support-engineer-msp-2025-09-22/#resume" target="_blank" class="resource-btn primary">
+                    <a href="resume-arshad.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
-                    <a href="https://profiles.candidate-profiles.com/arshad-g-tier-ii-it-support-engineer-msp-2025-09-22/#video" target="_blank" class="resource-btn accent">
+                    <a href="#" onclick="openVideoModal('https://profiles.candidate-profiles.com/arshad-g-tier-ii-it-support-engineer-msp-2025-09-22/#video'); return false;" class="resource-btn accent">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         Watch Intro Video
                     </a>
@@ -947,7 +1120,7 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-pB6bARZvNnus/87fc2b07-1c99-42e4-9dde-9893895c6ae0-PrRxBHMLvMnm3MN4SQSd1W7yrMbnwsMvXCjBbgZhvMiW6A9k4N7c4XzwYxxL1JVxcAglY7vbM0egFR93tIzq7yIzhyTog3vgzDv/Maswanganyi-RA---CV.pdf" target="_blank" class="resource-btn primary">
+                    <a href="resume-rodney.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
@@ -1009,11 +1182,11 @@
                 </div>
 
                 <div class="card-resources">
-                    <a href="https://profiles.candidate-profiles.com/aldrin-k-tier-ii-it-support-engineer-msp-2025-09-22/#resume" target="_blank" class="resource-btn primary">
+                    <a href="resume-aldrin.html" target="_blank" class="resource-btn primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         View Full Resume
                     </a>
-                    <a href="https://profiles.candidate-profiles.com/aldrin-k-tier-ii-it-support-engineer-msp-2025-09-22/#video" target="_blank" class="resource-btn accent">
+                    <a href="#" onclick="openVideoModal('https://profiles.candidate-profiles.com/aldrin-k-tier-ii-it-support-engineer-msp-2025-09-22/#video'); return false;" class="resource-btn accent">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         Watch Intro Video
                     </a>
@@ -1021,6 +1194,97 @@
             </article>
 
         </div>
+
+        <!-- --- Comparison Table --- -->
+        <section class="comparison-section">
+            <h2>Side-by-Side Comparison</h2>
+            <p>A quick snapshot to compare all six candidates across the criteria that matter most for this role.</p>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Location</th>
+                            <th>IT Experience</th>
+                            <th>MSP Experience</th>
+                            <th>M365 Admin</th>
+                            <th>RMM/PSA Tools</th>
+                            <th>Client-Facing</th>
+                            <th>Salary Range</th>
+                            <th>Intro Video</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="table-name">Menard M.</span></td>
+                            <td>South Africa</td>
+                            <td>5+ years</td>
+                            <td class="check">Current MSP</td>
+                            <td class="check">Expert (Azure cert)</td>
+                            <td class="check">ConnectWise, Kaseya</td>
+                            <td class="partial">Ticket-based</td>
+                            <td>$2,500 - $3,000</td>
+                            <td class="check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Guillermo S.</span></td>
+                            <td>Nicaragua</td>
+                            <td>10+ years</td>
+                            <td class="check">Current MSP</td>
+                            <td class="check">Tenant Admin</td>
+                            <td class="check">Kaseya VSA, TeamViewer</td>
+                            <td class="check">Phone + Email + Chat</td>
+                            <td>$3,000</td>
+                            <td class="check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Warren E.</span></td>
+                            <td>South Africa</td>
+                            <td>12+ years</td>
+                            <td class="check">Multiple MSPs</td>
+                            <td class="check">Full Stack (MCSA)</td>
+                            <td class="check">Naverisk, TeamViewer</td>
+                            <td class="check">Client + Vendor Liaison</td>
+                            <td>$2,000 - $2,500</td>
+                            <td class="miss">No</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Arshad G.</span></td>
+                            <td>South Africa</td>
+                            <td>5+ years</td>
+                            <td class="check">Current MSP</td>
+                            <td class="check">Azure + M365</td>
+                            <td class="check">NinjaOne (certified)</td>
+                            <td class="check">Multi-client roaming</td>
+                            <td>$2,500 - $3,000</td>
+                            <td class="check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Rodney A.</span></td>
+                            <td>South Africa</td>
+                            <td>7+ years</td>
+                            <td class="partial">Hardware vendor</td>
+                            <td class="partial">End user level</td>
+                            <td class="partial">Ticketing systems</td>
+                            <td class="check">UK clients + Supervisor</td>
+                            <td>$3,000</td>
+                            <td class="miss">No</td>
+                        </tr>
+                        <tr class="premium-row">
+                            <td><span class="table-name">Aldrin K.</span> <span class="table-badge premium">Premium</span></td>
+                            <td>South Africa</td>
+                            <td>8+ years</td>
+                            <td class="check">MSP specialist</td>
+                            <td class="check">Expert + Azure</td>
+                            <td class="check">ConnectWise, Automate, Ninja</td>
+                            <td class="check">First call resolution</td>
+                            <td>$3,700</td>
+                            <td class="check">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
         <!-- --- Verdict Section --- -->
         <section class="verdict-section">
@@ -1046,11 +1310,46 @@
 
     <!-- --- Footer --- -->
     <footer>
-        <p>Prepared exclusively for <strong>DIS Computers</strong> by <a href="https://getsagan.com" target="_blank">Sagan</a></p>
+        <p>Prepared exclusively for <strong>DIS Computers</strong> by <strong>Miguel</strong> at <a href="https://getsagan.com" target="_blank">Sagan</a></p>
         <div class="powered-by">
             <span>Confidential — Do not distribute</span>
         </div>
     </footer>
+
+<!-- Video Modal -->
+<div class="video-modal-overlay" id="videoModal">
+    <button class="video-modal-close" id="videoModalClose">&times;</button>
+    <div class="video-modal" id="videoModalContent"></div>
+</div>
+
+<script>
+function openVideoModal(url) {
+    var modal = document.getElementById('videoModal');
+    var content = document.getElementById('videoModalContent');
+    // Check if it's a direct video file or an embeddable page
+    if (url.match(/\.(mp4|webm|ogg)$/i)) {
+        content.innerHTML = '<video controls autoplay style="width:100%;max-height:80vh;border-radius:12px"><source src="' + url + '">Your browser does not support video.</video>';
+    } else {
+        content.innerHTML = '<iframe src="' + url + '" style="width:100%;height:80vh;border:none;border-radius:12px" allowfullscreen></iframe>';
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('videoModalClose').addEventListener('click', function() {
+    var modal = document.getElementById('videoModal');
+    var content = document.getElementById('videoModalContent');
+    modal.classList.remove('active');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+});
+
+document.getElementById('videoModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        document.getElementById('videoModalClose').click();
+    }
+});
+</script>
 
 </body>
 </html>
