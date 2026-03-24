@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIS Computers | Technical Client Liaison — Batch 2 Candidates</title>
+    <link rel="icon" href="dis-logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --black: #1a1f2e;
+            --dark: #212738;
+            --gray-dark: #333a4d;
+            --gray: #7b8294;
+            --gray-light: #e2e5eb;
+            --white: #ffffff;
+            --off-white: #f5f7fa;
+            --accent: #2ea3f2;
+            --accent-dark: #1b8dd6;
+            --accent-light: rgba(46, 163, 242, 0.08);
+            --accent-glow: rgba(46, 163, 242, 0.15);
+            --green: #34c759;
+            --amber: #f5a623;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--off-white);
+            color: var(--black);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header --- */
+        header {
+            background: var(--black);
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(46, 163, 242, 0.2);
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 16px; }
+
+        .logo-area img {
+            height: 44px;
+            background: #ffffff;
+            padding: 6px 14px;
+            border-radius: 8px;
+        }
+
+        .header-badge {
+            background: rgba(46, 163, 242, 0.1);
+            border: 1px solid rgba(46, 163, 242, 0.25);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Batch Nav --- */
+        .batch-nav {
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(46,163,242,0.1);
+        }
+
+        .batch-tab {
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .batch-tab:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+
+        .batch-tab.active {
+            color: var(--accent);
+            background: var(--accent-light);
+            border-color: rgba(46,163,242,0.2);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            background: var(--black);
+            padding: 60px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--accent-light);
+            border: 1px solid rgba(46, 163, 242, 0.2);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 750px;
+            margin: 0 auto 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span { color: var(--accent); }
+
+        .hero p {
+            color: rgba(255,255,255,0.55);
+            font-size: 17px;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .hero-meta-item svg { width: 16px; height: 16px; opacity: 0.5; }
+
+        /* --- Main Content --- */
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 60px 40px 100px; }
+
+        .section-header { text-align: center; margin-bottom: 48px; }
+
+        .section-header h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p { font-size: 15px; color: var(--gray); max-width: 550px; margin: 0 auto; }
+
+        /* --- Context Section --- */
+        .context-section {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .context-section h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+
+        .context-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+        .context-item h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+
+        .context-item p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+        /* --- Candidate Cards --- */
+        .candidates-grid { display: flex; flex-direction: column; gap: 40px; }
+
+        .candidate-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .candidate-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); }
+
+        .card-top { display: flex; align-items: stretch; }
+
+        .card-accent { width: 6px; background: var(--accent); flex-shrink: 0; }
+
+        .card-header {
+            flex: 1;
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .card-header-left { display: flex; align-items: center; gap: 20px; }
+
+        .candidate-avatar {
+            width: 56px; height: 56px;
+            background: var(--black);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+
+        .candidate-name-block h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--black);
+            letter-spacing: -0.3px;
+        }
+
+        .candidate-archetype {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .candidate-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+        .candidate-tag {
+            background: var(--off-white);
+            border: 1px solid var(--gray-light);
+            color: var(--gray-dark);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .candidate-card.top .card-accent { background: var(--green); }
+        .candidate-card.top { border-color: rgba(52, 199, 89, 0.2); }
+        .candidate-card.top:hover { box-shadow: 0 12px 48px rgba(52,199,89,0.08); }
+        .candidate-card.top .candidate-archetype { color: var(--green); }
+        .candidate-card.top .candidate-avatar { background: linear-gradient(135deg, var(--green), #28a745); }
+
+        .top-badge {
+            background: rgba(52,199,89,0.12);
+            color: #1a7a2e;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .card-body {
+            padding: 36px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .card-section h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .card-section p { font-size: 14px; color: var(--gray-dark); line-height: 1.7; }
+
+        .card-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .card-section ul li {
+            font-size: 14px;
+            color: var(--gray-dark);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .card-section ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        /* --- Recruiter Note --- */
+        .recruiter-note {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 0 40px 32px;
+        }
+
+        .recruiter-note-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .recruiter-note p {
+            font-size: 14px;
+            color: var(--gray-dark);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* --- Card Resources --- */
+        .card-resources {
+            padding: 0 40px 36px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .resource-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        .resource-btn.primary {
+            background: var(--off-white);
+            color: var(--black);
+            border: 1px solid var(--gray-light);
+        }
+
+        .resource-btn.primary:hover { background: var(--gray-light); }
+
+        .resource-btn.accent {
+            background: var(--accent);
+            color: var(--white);
+            border: 1px solid transparent;
+        }
+
+        .resource-btn.accent:hover { background: var(--accent-dark); }
+
+        .resource-btn.tap {
+            background: rgba(245,166,35,0.1);
+            color: #8a6000;
+            border: 1px solid rgba(245,166,35,0.3);
+        }
+
+        .resource-btn.tap:hover { background: rgba(245,166,35,0.2); }
+
+        /* --- Comparison Table --- */
+        .comparison-section { margin-top: 60px; margin-bottom: 60px; }
+
+        .comparison-section h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .comparison-section > p {
+            font-size: 15px;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .comparison-table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            font-size: 13px;
+        }
+
+        .comparison-table thead th {
+            background: var(--black);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .comparison-table thead th:first-child { border-radius: 11px 0 0 0; }
+        .comparison-table thead th:last-child { border-radius: 0 11px 0 0; }
+
+        .comparison-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-light);
+            color: var(--gray-dark);
+            vertical-align: top;
+        }
+
+        .comparison-table tbody tr:last-child td { border-bottom: none; }
+        .comparison-table tbody tr:hover { background: var(--off-white); }
+
+        .comparison-table tbody tr.top-row { background: rgba(52,199,89,0.04); }
+        .comparison-table tbody tr.top-row:hover { background: rgba(52,199,89,0.08); }
+
+        .table-name { font-weight: 700; color: var(--black); }
+
+        .check { color: var(--accent); font-weight: 700; }
+        .partial { color: var(--amber); }
+        .miss { color: var(--gray-light); }
+
+        /* --- Verdict --- */
+        .verdict-section {
+            background: var(--black);
+            border-radius: 16px;
+            padding: 48px;
+            margin-top: 60px;
+        }
+
+        .verdict-section h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
+
+        .verdict-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+        .verdict-item h4 { color: var(--accent); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+
+        .verdict-item p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
+
+        /* --- Footer --- */
+        footer { text-align: center; padding: 40px; color: var(--gray); font-size: 13px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        .powered-by { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px; font-size: 12px; color: var(--gray); }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            header { padding: 16px 20px; }
+            .hero { padding: 40px 20px 60px; }
+            .hero h1 { font-size: 32px; }
+            .main-content { padding: 40px 20px 80px; }
+            .card-header { padding: 24px; flex-direction: column; align-items: flex-start; }
+            .card-body { padding: 24px; grid-template-columns: 1fr; gap: 28px; }
+            .card-resources { padding: 0 24px 24px; }
+            .context-grid { grid-template-columns: 1fr; }
+            .context-section { padding: 32px 24px; }
+            .verdict-grid { grid-template-columns: 1fr; }
+            .verdict-section { padding: 32px 24px; }
+            .resource-btn { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table thead th, .comparison-table tbody td { padding: 10px 12px; }
+            .recruiter-note { margin: 0 24px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Header --- -->
+    <header>
+        <div class="logo-area">
+            <img src="dis-logo.png" alt="DIS Computers">
+        </div>
+        <span class="header-badge">Confidential</span>
+    </header>
+
+    <!-- Batch Navigation -->
+    <nav class="batch-nav">
+        <a href="index.html" class="batch-tab">Batch 1 &middot; Mar 17, 2026</a>
+        <a href="batch2.html" class="batch-tab active">Batch 2 &middot; Mar 23, 2026</a>
+    </nav>
+
+    <!-- --- Hero --- -->
+    <section class="hero">
+        <div class="hero-label">White Glove Candidate Presentation</div>
+        <h1>Batch 2 — <span>Technical Client Liaisons</span></h1>
+        <p>Five more professionals curated for DIS Computers. Deeper geographic diversity, stronger infrastructure depth, and one clear standout who redefines what this role can look like at scale.</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                Batch 2 | March 23, 2026
+            </div>
+            <div class="hero-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                5 Candidates
+            </div>
+            <div class="hero-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Jamaica · Nicaragua · Colombia
+            </div>
+            <div class="hero-meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                Digital Integrated Systems
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Main Content --- -->
+    <main class="main-content">
+
+        <!-- Context Section -->
+        <section class="context-section">
+            <h2>What This Batch Adds</h2>
+            <div class="context-grid">
+                <div class="context-item">
+                    <h4>Expanded Geography</h4>
+                    <p>Batch 2 broadens the talent pool to Jamaica and Colombia alongside Nicaragua. Each candidate brings English fluency and remote work discipline — DIS clients won't notice the difference in time zones or communication quality.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Stronger Infrastructure Depth</h4>
+                    <p>Francisco brings 12 years of Windows Server, Active Directory, Azure, and PowerShell. Ricardo manages two active helpdesk environments simultaneously. This batch skews more technical — ideal if DIS wants a liaison who can grow into L2 responsibilities.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Range of Seniority & Budget</h4>
+                    <p>From Daniel at $1,500 to Francisco at $2,500–$3,000, this batch covers the full spectrum. Whether DIS wants a cost-effective starter or a seasoned engineer who hits the ground running, there's a fit here.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2>Candidate Profiles</h2>
+            <p>Five professionals matched to DIS Computers' service standards — Batch 2, March 23, 2026.</p>
+        </div>
+
+        <div class="candidates-grid">
+
+            <!-- === Candidate 1: Shineel S.G. === -->
+            <article class="candidate-card">
+                <div class="card-top">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="candidate-avatar">SS</div>
+                            <div class="candidate-name-block">
+                                <h3>Shineel S.</h3>
+                                <div class="candidate-archetype">The High-Volume Problem Solver</div>
+                            </div>
+                        </div>
+                        <div class="candidate-tags">
+                            <span class="candidate-tag">Jamaica</span>
+                            <span class="candidate-tag">$2,000/mo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4>Why She Fits DIS</h4>
+                        <p>Shineel brings 7+ years of Tier 1–3 IT and customer support across healthcare and telecom — two of the most demanding service environments that exist. Her most recent role as an IT Support Specialist at The Wound Pros had her resolving 15–25 Zendesk tickets daily using Azure and Intune, the same stack DIS clients commonly use. She is wired for remote, high-volume triage.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>What She Solves</h4>
+                        <p>Shineel's QA record is exceptional: 98% QA score and 100% customer satisfaction at Sutherland Global. She coached new agents at Cox Communications, which means she can eventually help DIS onboard future support hires. Her strength is in making clients feel heard fast and documenting every touchpoint accurately.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>Experience Snapshot</h4>
+                        <ul>
+                            <li>IT Support Specialist at The Wound Pros — Remote (Jul 2024–Dec 2025)</li>
+                            <li>New Hire Support Specialist at Cox Communications — Remote (Aug 2021–Sept 2023)</li>
+                            <li>Technical Consultant Agent at Sutherland Global (Aug 2020–Aug 2021)</li>
+                            <li>Customer Service at Conduent & Ibex Global (2017–2020)</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Technical Arsenal</h4>
+                        <ul>
+                            <li>Microsoft 365 (Excel, Outlook, Teams, Word), Azure, Intune</li>
+                            <li>Zendesk, CRM management, Google Workspace</li>
+                            <li>Multi-screen multitasking, SLA adherence, root cause analysis</li>
+                            <li>BSc Tourism Management, University of the West Indies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recruiter-note">
+                    <div class="recruiter-note-label">Recruiter Note — Miguel</div>
+                    <p>Shineel stands out for the measurable consistency in her QA scores — 98% at Sutherland and 100% CSAT across multiple roles. She worked healthcare IT (The Wound Pros), which requires strict documentation protocols. She communicates clearly, adapts to remote workflows, and would be one of the most reliable hires in this batch at her price point.</p>
+                </div>
+
+                <div class="card-resources">
+                    <a href="b2-resume-shineel.html" target="_blank" class="resource-btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Full Resume
+                    </a>
+                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/fcf59779-601a-4e52-9dc2-3a43c060bc87" target="_blank" class="resource-btn accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Watch Intro Video
+                    </a>
+                </div>
+            </article>
+
+            <!-- === Candidate 2: Ricardo A.O.L. === -->
+            <article class="candidate-card">
+                <div class="card-top">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="candidate-avatar">RO</div>
+                            <div class="candidate-name-block">
+                                <h3>Ricardo O.</h3>
+                                <div class="candidate-archetype">The Multi-Stack Technician</div>
+                            </div>
+                        </div>
+                        <div class="candidate-tags">
+                            <span class="candidate-tag">Nicaragua</span>
+                            <span class="candidate-tag">$2,000 - $3,000/mo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4>Why He Fits DIS</h4>
+                        <p>Ricardo is rare: he's simultaneously active at Mentis-Group as an IT Quick Hit Engineer (Tier 2 remote support, SLA compliance) and at Landmark Recovery as an IT Service Desk Concierge. Two live helpdesk environments running in parallel. He supports Windows, Mac, and mobile devices, administers SaaS applications, and owns user access management — exactly the scope DIS needs from a Technical Client Liaison.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>What He Solves</h4>
+                        <p>Ricardo translates complex technical concepts into plain language for non-technical users — a listed skill that maps directly to DIS's client communication gap. His experience at Remitly included tech support for teams in Egypt, Ireland, Colombia, India, and the USA, so he's comfortable serving geographically diverse clients under pressure.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>Experience Snapshot</h4>
+                        <ul>
+                            <li>IT Quick Hit Engineer at Mentis-Group (April 2025–Present)</li>
+                            <li>IT Service Desk Concierge at Landmark Recovery (Nov 2023–Present)</li>
+                            <li>Associate, Global Service Desk at Concentrix Nicaragua (Oct 2022–Present)</li>
+                            <li>IT Corporate Specialist at Remitly Nicaragua (Jul 2019–Aug 2021)</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Technical Arsenal</h4>
+                        <ul>
+                            <li>Windows, Mac OS, Mobile Device support and troubleshooting</li>
+                            <li>Active Directory user management, Windows Deployment Server</li>
+                            <li>Google Workspace (G-Suite), CRM platforms, SaaS app administration</li>
+                            <li>IT ticketing, SLA management, knowledge base maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recruiter-note">
+                    <div class="recruiter-note-label">Recruiter Note — Miguel</div>
+                    <p>What I like most about Ricardo is the simultaneous active roles — he's not between jobs, he's managing multiple helpdesks at the same time. That's a strong signal of capacity and reliability. His Electronic Engineering background and Active Directory experience at Remitly give him infrastructure credibility beyond pure helpdesk. Strong mid-range pick for DIS.</p>
+                </div>
+
+                <div class="card-resources">
+                    <a href="b2-resume-ricardo.html" target="_blank" class="resource-btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Full Resume
+                    </a>
+                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/fe9d0af1-0a7b-4fc8-a8f7-f66b06892379" target="_blank" class="resource-btn accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Watch Intro Video
+                    </a>
+                </div>
+            </article>
+
+            <!-- === Candidate 3: Alejandro P. === -->
+            <article class="candidate-card">
+                <div class="card-top">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="candidate-avatar">AP</div>
+                            <div class="candidate-name-block">
+                                <h3>Alejandro P.</h3>
+                                <div class="candidate-archetype">The Process Optimizer</div>
+                            </div>
+                        </div>
+                        <div class="candidate-tags">
+                            <span class="candidate-tag">Nicaragua</span>
+                            <span class="candidate-tag">$2,000 - $3,000/mo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4>Why He Fits DIS</h4>
+                        <p>Alejandro is an Industrial Engineer who has spent 6+ years in tech and BPO environments turning chaos into structured workflows. As Team Leader at Concentrix, he coordinates 15+ engineers, tracks KPIs, and keeps escalation chains clean. DIS doesn't just need someone to answer tickets — they need someone who can eventually help manage how tickets flow. Alejandro is that person.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>What He Solves</h4>
+                        <p>He automated recurring operational processes at Concentrix, increasing productivity by 50% and reducing backlog by 25%. As Technical Lead, he reduced resolution time by 18% through workflow standardization. He serves as the point of contact between frontline teams and leadership — precisely what a client liaison does for DIS's engineers.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>Experience Snapshot</h4>
+                        <ul>
+                            <li>Team Leader at Concentrix — 15+ engineers, KPI dashboards (Oct 2024–Current)</li>
+                            <li>Technical Lead / SME at Concentrix (Oct 2023–Oct 2024)</li>
+                            <li>Technical Support Engineer at Concentrix (Nov 2022–Sep 2023)</li>
+                            <li>Operations Research Analyst at Outsourcing Solutions (Aug 2018–May 2022)</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Technical Arsenal</h4>
+                        <ul>
+                            <li>Advanced Excel, Power BI, Power Automate, Azure DevOps</li>
+                            <li>Microsoft Dynamics, Google Workspace</li>
+                            <li>KPI reporting, SOP maintenance, cross-functional coordination</li>
+                            <li>Industrial Engineering degree, Universidad Centroamericana (UCA)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recruiter-note">
+                    <div class="recruiter-note-label">Recruiter Note — Miguel</div>
+                    <p>Alejandro is not a traditional helpdesk candidate — he's an operations executor who happens to come from a tech environment. If DIS wants a technical liaison who can eventually own process improvements and help grow the support function, Alejandro is the one. Start him in the role and within 6 months he'll be redesigning how tickets are triaged.</p>
+                </div>
+
+                <div class="card-resources">
+                    <a href="b2-resume-alejandro.html" target="_blank" class="resource-btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Full Resume
+                    </a>
+                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/e5c90ad8-a9d2-4377-a30b-503f0ae9c3c2" target="_blank" class="resource-btn accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Watch Intro Video
+                    </a>
+                </div>
+            </article>
+
+            <!-- === Candidate 4: Daniel E.P.V. === -->
+            <article class="candidate-card">
+                <div class="card-top">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="candidate-avatar">DP</div>
+                            <div class="candidate-name-block">
+                                <h3>Daniel P.</h3>
+                                <div class="candidate-archetype">The Budget-Friendly All-Rounder</div>
+                            </div>
+                        </div>
+                        <div class="candidate-tags">
+                            <span class="candidate-tag">Colombia</span>
+                            <span class="candidate-tag">$1,500 - $2,000/mo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4>Why He Fits DIS</h4>
+                        <p>Daniel brings 5 years of technical support across SaaS platforms, e-commerce, and BPO environments. His current role at Testimonial.to requires remote ticket management, CRM-based client communication, and help center maintenance — very similar to what DIS needs on a daily basis. His English is C1 Advanced and he's worked with global teams throughout his career.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>What He Solves</h4>
+                        <p>At Amazon Tech Support, Daniel handled hardware/software diagnosis, mobile device configuration, user account management, and escalation coordination with vendors — all core to the Technical Client Liaison role. He's comfortable across phone, email, and chat. At $1,500–$2,000, he's DIS's most cost-effective option without sacrificing English proficiency or tech competence.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>Experience Snapshot</h4>
+                        <ul>
+                            <li>Technical Support Assistant at Testimonial.to (Mar 2024–Present)</li>
+                            <li>Technical Support Associate at Amazon.com (Sep 2022–Jan 2024)</li>
+                            <li>Customer Service Agent at Teleperformance (VRBO) (Feb–Aug 2022)</li>
+                            <li>Sales & Customer Service at Asurion (Jul–Dec 2021)</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Technical Arsenal</h4>
+                        <ul>
+                            <li>Hardware/software diagnosis, mobile devices, user account setup</li>
+                            <li>CRM platforms, ticketing systems, escalation management</li>
+                            <li>Microsoft Office, help center documentation</li>
+                            <li>English C1 Advanced, Spanish native</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recruiter-note">
+                    <div class="recruiter-note-label">Recruiter Note — Miguel</div>
+                    <p>Daniel is the value play in this batch. C1 English, solid multi-channel support experience, Amazon Tech Support credibility — all at the lowest price point. He doesn't have deep infrastructure experience, but for a frontline liaison role focused on Tier 1 triage and client communication, he covers the essentials well. Great option if DIS wants to minimize cost while still getting professional-grade support.</p>
+                </div>
+
+                <div class="card-resources">
+                    <a href="b2-resume-daniel.html" target="_blank" class="resource-btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Full Resume
+                    </a>
+                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/6ac61e78-b7fa-4b52-b4e3-6952795616de" target="_blank" class="resource-btn accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Watch Intro Video
+                    </a>
+                </div>
+            </article>
+
+            <!-- === Candidate 5: Francisco A. (TOP PICK) === -->
+            <article class="candidate-card top">
+                <div class="card-top">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="candidate-avatar">FA</div>
+                            <div class="candidate-name-block">
+                                <h3>Francisco A.</h3>
+                                <div class="candidate-archetype">The Infrastructure Authority</div>
+                            </div>
+                        </div>
+                        <div class="candidate-tags">
+                            <span class="candidate-tag">Nicaragua</span>
+                            <span class="candidate-tag">$2,500 - $3,000/mo</span>
+                            <span class="top-badge">Top Pick</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4>Why He Fits DIS</h4>
+                        <p>Francisco is the most technically advanced candidate across both batches. With 12+ years in IT support and infrastructure — Windows Server administration (7+ years), Active Directory, Azure, PowerShell scripting (6 years), N-Able, and ManageEngine — he doesn't just handle tickets, he builds the systems that route them. His Computer Engineering degree and stack of Fortinet, Azure, CompTIA, and Google Cloud certifications confirm this is not a support specialist; this is an engineer with a client-facing edge.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>What He Solves</h4>
+                        <p>Francisco led a team of 5 Support Engineers and 2 AD Account Engineers. He planned and executed migrations from on-premise infrastructure to Azure. He rolled out Monday.com across multiple departments and automated inbound/termination workflows with Power Automate and SOX compliance controls. He can absorb DIS's entire Tier 1–2 load, free senior engineers from L2 escalations, and eventually grow into a team lead.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4>Experience Snapshot</h4>
+                        <ul>
+                            <li>L2 Support Engineer / Project Management (Jun 2023–Present) — Azure, N-Able, PowerShell, Windows Server</li>
+                            <li>Technical Support Leader / AD Support Engineer (Dec 2015–Jun 2023) — Led 7-person team, O365 migration, ManageEngine</li>
+                            <li>Layer 1 Technical Support Engineer (Jan 2010–Dec 2015)</li>
+                            <li>Help Desk Engineer / Repair Technician (Oct 2009–Dec 2015)</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Certifications & Skills</h4>
+                        <ul>
+                            <li>Fortinet Certified Fundamentals (FCP) + Fortinet Certified Associate (FCA)</li>
+                            <li>Microsoft Azure Fundamentals, Google Cloud Foundations</li>
+                            <li>CompTIA Security+ (SY0-601), Agile Information Security Diploma</li>
+                            <li>PowerShell, N-Able, ManageEngine SCCM, Power Automate, SQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recruiter-note">
+                    <div class="recruiter-note-label">Recruiter Note — Miguel</div>
+                    <p>Francisco is the clear frontrunner in this batch — and arguably the strongest candidate across both batches. Twelve years of infrastructure support, a computer engineering degree, Fortinet certifications, Azure, CompTIA Security+, and team leadership experience make him a rare find at this price point. If DIS is serious about upgrading the quality of their frontline support and building toward a scalable service model, this is the hire. He won't stay at Tier 1 for long — and that's exactly the kind of person you want growing inside your organization.</p>
+                </div>
+
+                <div class="card-resources">
+                    <a href="b2-resume-francisco.html" target="_blank" class="resource-btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        View Full Resume
+                    </a>
+                    <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/85554fcf-1a34-40c1-809c-a170d6392732" target="_blank" class="resource-btn accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Watch Intro Video
+                    </a>
+                </div>
+            </article>
+
+        </div><!-- /candidates-grid -->
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2>At a Glance</h2>
+            <p>Side-by-side benchmark of all five Batch 2 candidates.</p>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Location</th>
+                            <th>IT Experience</th>
+                            <th>Helpdesk Environments</th>
+                            <th>M365 / SaaS Admin</th>
+                            <th>Client-Facing</th>
+                            <th>Salary Range</th>
+                            <th>Intro Video</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="table-name">Shineel S.</span></td>
+                            <td>Jamaica</td>
+                            <td>7+ years</td>
+                            <td class="check">Healthcare + Telecom</td>
+                            <td class="check">Azure, Intune, M365</td>
+                            <td class="check">98% QA / 100% CSAT</td>
+                            <td>$2,000</td>
+                            <td><a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/fcf59779-601a-4e52-9dc2-3a43c060bc87" target="_blank" style="color:var(--accent)">▶ Watch</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Ricardo O.</span></td>
+                            <td>Nicaragua</td>
+                            <td>6+ years</td>
+                            <td class="check">MSP + Service Desk (dual active)</td>
+                            <td class="check">G-Suite, SaaS admin, AD</td>
+                            <td class="check">Multi-country support</td>
+                            <td>$2,000–$3,000</td>
+                            <td><a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/fe9d0af1-0a7b-4fc8-a8f7-f66b06892379" target="_blank" style="color:var(--accent)">▶ Watch</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Alejandro P.</span></td>
+                            <td>Nicaragua</td>
+                            <td>6+ years</td>
+                            <td class="check">BPO / Tech Ops Team Lead</td>
+                            <td class="partial">Power BI, Azure DevOps</td>
+                            <td class="check">Cross-functional liaison</td>
+                            <td>$2,000–$3,000</td>
+                            <td><a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/e5c90ad8-a9d2-4377-a30b-503f0ae9c3c2" target="_blank" style="color:var(--accent)">▶ Watch</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-name">Daniel P.</span></td>
+                            <td>Colombia</td>
+                            <td>5 years</td>
+                            <td class="partial">SaaS + Amazon Support</td>
+                            <td class="partial">Microsoft Office, CRM</td>
+                            <td class="check">Multi-channel (phone, chat, email)</td>
+                            <td>$1,500–$2,000</td>
+                            <td><a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/6ac61e78-b7fa-4b52-b4e3-6952795616de" target="_blank" style="color:var(--accent)">▶ Watch</a></td>
+                        </tr>
+                        <tr class="top-row">
+                            <td><span class="table-name">Francisco A. &#9733; Top Pick</span></td>
+                            <td>Nicaragua</td>
+                            <td>12+ years</td>
+                            <td class="check">Infra + MSP + Team Lead</td>
+                            <td class="check">O365, Azure AD, N-Able, ManageEngine</td>
+                            <td class="check">Led 7-person team</td>
+                            <td>$2,500–$3,000</td>
+                            <td><a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/85554fcf-1a34-40c1-809c-a170d6392732" target="_blank" style="color:var(--accent)">▶ Watch</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Verdict -->
+        <section class="verdict-section">
+            <h2>Miguel's Take</h2>
+            <div class="verdict-grid">
+                <div class="verdict-item">
+                    <h4>Best Value</h4>
+                    <p>Daniel P. at $1,500–$2,000 covers the Tier 1 essentials with solid English, Amazon credibility, and a client-first mindset. If DIS wants to minimize cost while maintaining quality, this is the hire.</p>
+                </div>
+                <div class="verdict-item">
+                    <h4>Best Fit for Growth</h4>
+                    <p>Alejandro P. enters as a technical liaison but is built to grow into a process architect. His operations background will help DIS standardize how support flows as the team scales. Long-term high upside.</p>
+                </div>
+                <div class="verdict-item">
+                    <h4>Top of Batch</h4>
+                    <p>Francisco A. is the strongest candidate across both batches. Twelve years, Fortinet certs, Azure, PowerShell, team leadership. He elevates the entire service operation. If budget allows, this is the hire that changes how DIS delivers support.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- --- Footer --- -->
+    <footer>
+        <p>Prepared exclusively for <strong>DIS Computers</strong> by <strong>Miguel</strong> at <a href="https://getsagan.com" target="_blank">Sagan</a></p>
+        <div class="powered-by">
+            <span>Confidential — Do not distribute</span>
+        </div>
+    </footer>
+
+</body>
+</html>

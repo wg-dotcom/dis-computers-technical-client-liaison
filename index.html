@@ -512,6 +512,64 @@
             line-height: 1.7;
         }
 
+        /* --- Batch Nav --- */
+        .batch-nav {
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(46,163,242,0.1);
+        }
+
+        .batch-tab {
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .batch-tab:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .batch-tab.active {
+            color: var(--accent);
+            background: var(--accent-light);
+            border-color: rgba(46,163,242,0.2);
+        }
+
+        /* --- Recruiter Note --- */
+        .recruiter-note {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 0 40px 32px;
+        }
+
+        .recruiter-note-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .recruiter-note p {
+            font-size: 14px;
+            color: var(--gray-dark);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
         /* --- Footer --- */
         footer {
             text-align: center;
@@ -778,6 +836,12 @@
         </div>
         <span class="header-badge">Confidential</span>
     </header>
+
+    <!-- Batch Navigation -->
+    <nav class="batch-nav">
+        <a href="index.html" class="batch-tab active">Batch 1 &middot; Mar 17, 2026</a>
+        <a href="batch2.html" class="batch-tab">Batch 2 &middot; Mar 23, 2026</a>
+    </nav>
 
     <!-- --- Hero --- -->
     <section class="hero">
