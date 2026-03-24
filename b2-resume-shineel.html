@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shineel S. - Technical Client Liaison | DIS Computers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f5f7;
+            color: #2d3748;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+        }
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; margin: 0; max-width: 100%; }
+        }
+
+        /* Header */
+        .header {
+            background: #1a1f2e;
+            padding: 40px 48px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-left { flex: 1; }
+        .logo {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #2ea3f2;
+            margin-bottom: 20px;
+        }
+        .candidate-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .candidate-headline {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2ea3f2;
+            margin-bottom: 16px;
+        }
+        .contact-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+
+        /* Accent bar */
+        .accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #2ea3f2, #1b8dd6);
+        }
+
+        /* Body */
+        .body-content {
+            padding: 36px 48px 32px;
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2ea3f2;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .summary-text {
+            font-size: 14.5px;
+            color: #4a5568;
+            line-height: 1.75;
+        }
+
+        /* Experience */
+        .exp-entry { margin-bottom: 22px; }
+        .exp-entry:last-child { margin-bottom: 0; }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        .exp-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        .exp-company {
+            font-size: 14px;
+            color: #2ea3f2;
+            font-weight: 500;
+        }
+        .exp-date {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 400;
+        }
+        .exp-meta {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 4px;
+        }
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+        .exp-bullets li {
+            font-size: 13.5px;
+            color: #4a5568;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        .exp-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            background: #2ea3f2;
+            border-radius: 50%;
+        }
+
+        /* Education */
+        .edu-entry {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        .edu-degree {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #2ea3f2;
+            background: rgba(46, 163, 242, 0.08);
+            border: 1px solid rgba(46, 163, 242, 0.2);
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1f2e;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #2ea3f2;
+        }
+        .footer-note {
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">DIS COMPUTERS</div>
+                <div class="candidate-name">Shineel S.</div>
+                <div class="candidate-headline">Technical Client Liaison</div>
+                <div class="contact-row">
+                    <span class="contact-item">Jamaica</span>
+                    <span class="contact-item">$2,000/mo</span>
+                </div>
+            </div>
+        </div>
+        <div class="accent-bar"></div>
+
+        <div class="body-content">
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p class="summary-text">7+ years Tier 1&ndash;3 IT and customer support across healthcare and telecom. Proven track record exceeding QA goals. Proficient in Microsoft 365, Azure/Intune, Zendesk, and Google Workspace. Excels in remote, high-volume environments.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">IT Support Specialist</span>
+                            <span class="exp-company"> &middot; The Wound Pros</span>
+                        </div>
+                        <span class="exp-date">Jul 2024 &ndash; Dec 2025</span>
+                    </div>
+                    <div class="exp-meta">Remote</div>
+                    <ul class="exp-bullets">
+                        <li>Resolved 15&ndash;25 Zendesk tickets daily using Azure and Intune.</li>
+                        <li>Guided users through M365 workflows.</li>
+                        <li>Diagnosed Tier 1&ndash;3 issues across diverse hardware.</li>
+                        <li>Collaborated via Slack and Asana for bug escalations.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">New Hire Support Specialist</span>
+                            <span class="exp-company"> &middot; Cox Communications</span>
+                        </div>
+                        <span class="exp-date">Aug 2021 &ndash; Sept 2023</span>
+                    </div>
+                    <div class="exp-meta">Remote</div>
+                    <ul class="exp-bullets">
+                        <li>Handled high-level client escalations.</li>
+                        <li>Coached new agents on multi-system workflows.</li>
+                        <li>Led sales sessions exceeding KPIs.</li>
+                        <li>Maintained strict schedule adherence.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Technical Consultant Agent</span>
+                            <span class="exp-company"> &middot; Sutherland Global</span>
+                        </div>
+                        <span class="exp-date">Aug 2020 &ndash; Aug 2021</span>
+                    </div>
+                    <div class="exp-meta">Jamaica</div>
+                    <ul class="exp-bullets">
+                        <li>Managed 40&ndash;50 daily chat tickets.</li>
+                        <li>Achieved 98% QA score and 100% customer satisfaction.</li>
+                        <li>Navigated CRMs to handle billing and support.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Customer Service Representative</span>
+                            <span class="exp-company"> &middot; Conduent</span>
+                        </div>
+                        <span class="exp-date">Oct 2018 &ndash; Nov 2020</span>
+                    </div>
+                    <div class="exp-meta">Jamaica</div>
+                    <ul class="exp-bullets">
+                        <li>Technical troubleshooting and billing queries across multiple systems.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Customer Service Representative</span>
+                            <span class="exp-company"> &middot; Ibex Global</span>
+                        </div>
+                        <span class="exp-date">Aug 2017 &ndash; Sept 2018</span>
+                    </div>
+                    <div class="exp-meta">Jamaica</div>
+                    <ul class="exp-bullets">
+                        <li>Tier 1 support and upselling in high-volume call center.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="edu-entry">
+                    <span class="edu-degree">BSc Tourism Management</span> &mdash; University of the West Indies, Mona Campus
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Microsoft 365</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Outlook</span>
+                    <span class="skill-tag">Teams</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Intune</span>
+                    <span class="skill-tag">Zendesk</span>
+                    <span class="skill-tag">CRM Management</span>
+                    <span class="skill-tag">Google Workspace</span>
+                    <span class="skill-tag">SLA Adherence</span>
+                    <span class="skill-tag">Root Cause Analysis</span>
+                    <span class="skill-tag">Conflict Resolution</span>
+                    <span class="skill-tag">Active Listening</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">DIS COMPUTERS</div>
+            <div class="footer-note">Confidential &mdash; Prepared for DIS Computers</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco A. - Technical Client Liaison | DIS Computers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f5f7;
+            color: #2d3748;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+        }
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; margin: 0; max-width: 100%; }
+        }
+
+        /* Header */
+        .header {
+            background: #1a1f2e;
+            padding: 40px 48px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-left { flex: 1; }
+        .logo {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #2ea3f2;
+            margin-bottom: 20px;
+        }
+        .name-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .candidate-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .top-pick-badge {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #1a1f2e;
+            background: #34c759;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            align-self: center;
+        }
+        .candidate-headline {
+            font-size: 16px;
+            font-weight: 500;
+            color: #34c759;
+            margin-bottom: 16px;
+        }
+        .contact-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+
+        /* Accent bar — green for Top Pick */
+        .accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #34c759, #28a745);
+        }
+
+        /* Body */
+        .body-content {
+            padding: 36px 48px 32px;
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #34c759;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .summary-text {
+            font-size: 14.5px;
+            color: #4a5568;
+            line-height: 1.75;
+        }
+
+        /* Experience */
+        .exp-entry { margin-bottom: 22px; }
+        .exp-entry:last-child { margin-bottom: 0; }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        .exp-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        .exp-company {
+            font-size: 14px;
+            color: #34c759;
+            font-weight: 500;
+        }
+        .exp-date {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 400;
+        }
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+        .exp-bullets li {
+            font-size: 13.5px;
+            color: #4a5568;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        .exp-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            background: #34c759;
+            border-radius: 50%;
+        }
+
+        /* Certifications */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        .cert-list li {
+            font-size: 13.5px;
+            color: #4a5568;
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .cert-list li:last-child { border-bottom: none; }
+        .cert-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 5px;
+            height: 5px;
+            background: #34c759;
+            border-radius: 50%;
+        }
+        .cert-date {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-left: 6px;
+        }
+
+        /* Education */
+        .edu-entry {
+            font-size: 14px;
+            color: #4a5568;
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .edu-entry::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 5px;
+            height: 5px;
+            background: #34c759;
+            border-radius: 50%;
+        }
+        .edu-label {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #34c759;
+            background: rgba(52, 199, 89, 0.08);
+            border: 1px solid rgba(52, 199, 89, 0.25);
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1f2e;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #2ea3f2;
+        }
+        .footer-note {
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">DIS COMPUTERS</div>
+                <div class="name-row">
+                    <div class="candidate-name">Francisco A.</div>
+                    <span class="top-pick-badge">Top Pick</span>
+                </div>
+                <div class="candidate-headline">Technical Client Liaison</div>
+                <div class="contact-row">
+                    <span class="contact-item">Nicaragua</span>
+                    <span class="contact-item">$2,500&ndash;$3,000 / mo</span>
+                </div>
+            </div>
+        </div>
+        <div class="accent-bar"></div>
+
+        <div class="body-content">
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p class="summary-text">Senior IT Engineer with 12+ years in support, infrastructure, and task automation for global companies. Expert in Windows Server administration, Active Directory, Azure, PowerShell scripting, and project management. Experienced team leader who monitors and guides daily progress. Strong written and verbal communication in English and Spanish.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                <ul class="cert-list">
+                    <li>Fortinet Certified Fundamentals (FCP) <span class="cert-date">Dec 2023</span></li>
+                    <li>Fortinet Certified Associate (FCA) <span class="cert-date">Feb 2024</span></li>
+                    <li>Microsoft Azure Fundamentals <span class="cert-date">Jan 2025</span></li>
+                    <li>Google Cloud Computing Foundations <span class="cert-date">Jan 2025</span></li>
+                    <li>CompTIA Security+ (SY0-601) <span class="cert-date">Feb 2023</span></li>
+                    <li>Agile Information Security Diploma <span class="cert-date">Jan 2022</span></li>
+                    <li>Cloud Professional Certification <span class="cert-date">Nov 2021</span></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">L2 Support Engineer / Project Management</span>
+                        </div>
+                        <span class="exp-date">Jun 2023&ndash;Present</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Led Monday.com rollout across multiple departments</li>
+                        <li>Customized workflows and automated processes for each team</li>
+                        <li>Integrated Monday.com with Power Automate and OneDrive</li>
+                        <li>Managed Windows Server administration tasks (GPO, PowerShell scripts, audit settings)</li>
+                        <li>Managed deployments and patches using N-Able</li>
+                        <li>Planned and executed migration from on-premise infrastructure to Cloud</li>
+                        <li>Facilitated Linux workstation domain joins and server patching</li>
+                        <li>Established test environments for new services and tools</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Technical Support Leader / Active Directory Support Engineer</span>
+                        </div>
+                        <span class="exp-date">Dec 2015&ndash;Jun 2023</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Provided user/group support, computer maintenance, GPO creation, security group management, and AD cleanup</li>
+                        <li>Led a team of 5 Support Engineers and 2 AD Account Engineers</li>
+                        <li>Planned and executed migration from on-premise domain to Azure and Google Suite to O365</li>
+                        <li>Managed deployments using ManageEngine</li>
+                        <li>Developed PowerShell automation scripts linked to GPOs</li>
+                        <li>Implemented SCCM for streamlined system management</li>
+                        <li>Improved inbound/termination/promotion processes with Power Automate flows and SOX audit compliance</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Layer 1 Technical Support Engineer</span>
+                        </div>
+                        <span class="exp-date">Jan 2010&ndash;Dec 2015</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Direct technical support for hardware and software issues</li>
+                        <li>Hardware replacement, repair, and upgrades</li>
+                        <li>Developed inventory system using Java and MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Help Desk Engineer / Repair Technician</span>
+                        </div>
+                        <span class="exp-date">Oct 2009&ndash;Dec 2015</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>On-site computer repair for private customers and small businesses</li>
+                        <li>Hardware disassembly, malware diagnosis, preventive maintenance</li>
+                        <li>HP brand specialist</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="edu-entry">
+                    <span class="edu-label">Computer Engineering</span> &mdash; Engineering National University Nicaragua <span style="color:#a0aec0; font-size:13px;">2006&ndash;2012</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Windows Server Administration</span>
+                    <span class="skill-tag">PowerShell</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">Azure Active Directory</span>
+                    <span class="skill-tag">O365 / M365 Administration</span>
+                    <span class="skill-tag">N-Able</span>
+                    <span class="skill-tag">ManageEngine</span>
+                    <span class="skill-tag">SCCM</span>
+                    <span class="skill-tag">GPO Management</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Power Automate</span>
+                    <span class="skill-tag">Power Apps</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Fortinet</span>
+                    <span class="skill-tag">Monday.com</span>
+                    <span class="skill-tag">SmartSheets</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Agile Methodologies</span>
+                    <span class="skill-tag">Team Leadership</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">DIS COMPUTERS</div>
+            <div class="footer-note">Confidential &mdash; Prepared for DIS Computers</div>
+        </div>
+    </div>
+</body>
+</html>
