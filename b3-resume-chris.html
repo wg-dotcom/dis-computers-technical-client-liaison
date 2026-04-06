@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris K. - Technical Client Liaison | DIS Computers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f5f7;
+            color: #2d3748;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+        }
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; margin: 0; max-width: 100%; }
+        }
+        .header {
+            background: #1a1f2e;
+            padding: 40px 48px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-left { flex: 1; }
+        .logo { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: #2ea3f2; margin-bottom: 20px; }
+        .candidate-name { font-size: 36px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+        .candidate-headline { font-size: 16px; font-weight: 500; color: #2ea3f2; margin-bottom: 16px; }
+        .contact-row { display: flex; gap: 24px; flex-wrap: wrap; }
+        .contact-item { font-size: 13px; color: #a0aec0; }
+        .accent-bar { height: 4px; background: linear-gradient(90deg, #2ea3f2, #1b8dd6); }
+        .body-content { padding: 36px 48px 32px; }
+        .section { margin-bottom: 28px; }
+        .section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #2ea3f2; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px; }
+        .summary-text { font-size: 14.5px; color: #4a5568; line-height: 1.75; }
+        .exp-entry { margin-bottom: 22px; }
+        .exp-entry:last-child { margin-bottom: 0; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; }
+        .exp-title { font-size: 15px; font-weight: 600; color: #1a202c; }
+        .exp-company { font-size: 14px; color: #2ea3f2; font-weight: 500; }
+        .exp-date { font-size: 13px; color: #718096; font-weight: 400; }
+        .exp-meta { font-size: 13px; color: #718096; margin-bottom: 4px; }
+        .exp-bullets { list-style: none; padding-left: 0; margin-top: 8px; }
+        .exp-bullets li { font-size: 13.5px; color: #4a5568; padding-left: 16px; position: relative; margin-bottom: 5px; line-height: 1.6; }
+        .exp-bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; background: #2ea3f2; border-radius: 50%; }
+        .edu-entry { font-size: 14px; color: #4a5568; line-height: 1.7; margin-bottom: 8px; }
+        .edu-degree { font-weight: 600; color: #1a202c; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { font-size: 12.5px; font-weight: 500; color: #2ea3f2; background: rgba(46, 163, 242, 0.08); border: 1px solid rgba(46, 163, 242, 0.2); padding: 5px 14px; border-radius: 20px; }
+        .footer { background: #1a1f2e; padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; color: #2ea3f2; }
+        .footer-note { font-size: 11px; color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">DIS COMPUTERS</div>
+                <div class="candidate-name">Chris K.</div>
+                <div class="candidate-headline">Technical Client Liaison</div>
+                <div class="contact-row">
+                    <span class="contact-item">Cape Town, South Africa</span>
+                    <span class="contact-item">$2,500/mo</span>
+                </div>
+            </div>
+        </div>
+        <div class="accent-bar"></div>
+
+        <div class="body-content">
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p class="summary-text">Technical and Customer Support Specialist with 6+ years of experience supporting B2B and B2C clients across SaaS, e-commerce, finance, and hospitality. Skilled in network troubleshooting (Wi-Fi, DNS, DHCP, TCP/IP, Fortinet, Aruba, Cisco Meraki), CRM systems, and remote support tools. Experienced Team Lead who managed 13 support agents to 95% customer satisfaction. Bilingual (French-English) with cybersecurity foundations certification.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Bilingual Technical Support Analyst</span>
+                            <span class="exp-company"> &middot; Gexel / Datavalet</span>
+                        </div>
+                        <span class="exp-date">May 2024 &ndash; Jul 2025</span>
+                    </div>
+                    <div class="exp-meta">South Africa (Remote &ndash; North American Clients)</div>
+                    <ul class="exp-bullets">
+                        <li>Provided bilingual technical support to enterprise and hospitality clients across North America.</li>
+                        <li>Resolved network issues: Wi-Fi connectivity, DNS, DHCP, IP addressing, SSID setup.</li>
+                        <li>Diagnosed access point outages and switch/router performance using remote tools.</li>
+                        <li>Guided on-site technicians through complex configurations and incident resolutions.</li>
+                        <li>Maintained SLA compliance and consistently achieved CSAT scores above 85%.</li>
+                        <li>Documented troubleshooting steps using Talkdesk, TeamViewer, and ServiceNow.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Bilingual Technical Support Representative</span>
+                            <span class="exp-company"> &middot; Webhelp / Sage</span>
+                        </div>
+                        <span class="exp-date">Aug 2023 &ndash; Mar 2024</span>
+                    </div>
+                    <div class="exp-meta">South Africa</div>
+                    <ul class="exp-bullets">
+                        <li>Assisted users of Sage50 and Sage300 by phone and email.</li>
+                        <li>Handled installation, setup, password issues, and general troubleshooting.</li>
+                        <li>Achieved more than 90% first-contact resolution rate.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Customer Service Specialist &ndash; Level II</span>
+                            <span class="exp-company"> &middot; Webhelp / WealthSimple</span>
+                        </div>
+                        <span class="exp-date">Dec 2022 &ndash; Aug 2023</span>
+                    </div>
+                    <div class="exp-meta">South Africa</div>
+                    <ul class="exp-bullets">
+                        <li>Bilingual support for high-net-worth clients: investment accounts, tax forms, deposits, withdrawals.</li>
+                        <li>Handled inquiries and escalations across phone, email, and chat.</li>
+                        <li>Worked with Zendesk and AWS to log, prioritize, and track issues.</li>
+                        <li>Contributed to 80%+ average CSAT, exceeding service benchmarks.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Team Lead &ndash; Customer Support</span>
+                            <span class="exp-company"> &middot; eKomi / Honor</span>
+                        </div>
+                        <span class="exp-date">Sept 2022 &ndash; Dec 2022</span>
+                    </div>
+                    <div class="exp-meta">South Africa</div>
+                    <ul class="exp-bullets">
+                        <li>Managed a team of 13 support agents, improving performance through coaching.</li>
+                        <li>Carried out quality checks and shared feedback with team members.</li>
+                        <li>Helped the team reach 95% customer satisfaction during peak periods.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Customer Service Representative</span>
+                            <span class="exp-company"> &middot; Capability BPO / Groupon</span>
+                        </div>
+                        <span class="exp-date">Jul 2020 &ndash; Aug 2022</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Delivered bilingual service for Groupon Getaways and Local Deals via chat and email.</li>
+                        <li>Exceeded 90% CSAT, high first-contact resolution, and handle time targets.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Front Desk Operations Administrator</span>
+                            <span class="exp-company"> &middot; Karibu Lodge</span>
+                        </div>
+                        <span class="exp-date">Apr 2018 &ndash; Jun 2020</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Managed bookings, guest requests, and daily operations. 90%+ satisfaction rate.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education &amp; Certifications</div>
+                <div class="edu-entry">
+                    <span class="edu-degree">BA (Honours) International Relations</span> &mdash; University of Lubumbashi, DR Congo
+                </div>
+                <div class="edu-entry">
+                    <span class="edu-degree">Certificate in Project Management</span> &mdash; Damelin College, South Africa
+                </div>
+                <div class="edu-entry">
+                    <span class="edu-degree">EF SET English Certificate</span> &middot; <span class="edu-degree">Cybersecurity Foundations</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Wi-Fi / DNS / DHCP / TCP-IP</span>
+                    <span class="skill-tag">Fortinet</span>
+                    <span class="skill-tag">Aruba (Wave &amp; Central)</span>
+                    <span class="skill-tag">Cisco Meraki</span>
+                    <span class="skill-tag">Sage50 / Sage300</span>
+                    <span class="skill-tag">TeamViewer</span>
+                    <span class="skill-tag">LogMeIn</span>
+                    <span class="skill-tag">Zendesk</span>
+                    <span class="skill-tag">ServiceNow</span>
+                    <span class="skill-tag">Talkdesk</span>
+                    <span class="skill-tag">Freshdesk</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">SLA Management</span>
+                    <span class="skill-tag">Quality Assurance</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div class="skills-grid">
+                    <span class="skill-tag">English (Fluent &ndash; C2)</span>
+                    <span class="skill-tag">French (Native / Bilingual)</span>
+                    <span class="skill-tag">Swahili (Proficient &ndash; B2+)</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">DIS COMPUTERS</div>
+            <div class="footer-note">Confidential &mdash; Prepared for DIS Computers</div>
+        </div>
+    </div>
+</body>
+</html>
